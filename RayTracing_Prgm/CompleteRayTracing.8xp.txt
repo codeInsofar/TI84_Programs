@@ -1,0 +1,1310 @@
+
+
+
+"C|u[|b][|e] 2 [|d]o[|e][s][n][t] |wo[r]k j|u[s][t] [r][|e]mo|v[|e]
+
+ClrDraw:AxesOff:ClrHome
+{4,1}->dim([F]
+{3,2}->dim([G]
+[[0][0][0][1]]->[F]
+[[0,0][0,1][1,0]]->[G]
+"[A]-S[p]h[|e][r][|e], [B]-C|u[|b][|e][s], [C]-Pl[|a][n][|e][s], [D] and [E] [|a][r][|e] f[r][|e][|e] [t]o |u[s][|e] fo[r] 4[t]h and 5[t]h o[|b]j [|c]l[|a][s][s]
+"[F]-i[n][t][|e][r][s][|e][|c][t]io[n] fi[n][|a]l [r][|a]y, [G] [|a]l[s]o |u[s][|e][|d], |will [|d][|e]l [|b]y [t]h[|e][n]
+"C[|a]m[|e][r][|a] [F][G], Ligh[t] [H]
+"Do[n][t] |u[s][|e] [I] or [J]
+"[A] 1,2,3-[p]o[s]i[t]io[n] 4,5,6-ijk [r]o[t][|a][t]io[n][s] 7-S[|c][|a]l[|e]/[r][|a][|d]i|u[s] 8,9,10,11,12,13-Sh[|e][|a][r]i[n]g 12,15,16-Colo[r]Ch[r]om[|e]/Ch[|e][|c]k[|e][r][|e][|d];Com[p] o[r][|d][|e][r] [s]h[|e][|a][r],[r]o[t][|a][t][|e],[s][|c][|a]l[|e],[t][r][|a][n][s]l[|a][t][|e]
+"A,B,C,D,E  F,G,H,J,K [|a][r][|e] |u[s][|e][|d] fo[r] o[|b]j
+"Do[n][t] |u[s][|e] I [|a]l[t] |u[s][|e][s]
+"Do[n][t] |u[s][|e] V [|b]ool
+"Do[n][t] |u[s][|e] X,Y,Z fo[r] [|c]olo[r] [p]xl |u[s][|e] o[n]ly
+"T i[s] fo[r] i[n][t][|e][r][s][|e][|c][t]io[n] [s]o [|d]o[n][t] |u[s][|e] [t]h[|a][t] [|e]i[t]h[|e][r]
+
+
+
+
+
+
+
+
+"M[|e][n]|u S[t]|uff
+Lbl 00:DelVar S:DelVar F
+Menu("O[|b]j[|e][|c][t][s]","S[p]h[|e][r][|e][s] "+toString(A)+":",01,"Pl[|a][n][|e][s] "+toString(B)+":",02,"C|u[|b][|e][s] "+toString(C)+":",03,"C[|a]m[|e][r][|a]",06,"Ligh[t][s] "+toString(O)+":",07,"Do[n][|e]",09)
+
+Lbl 01:Disp "E[n][t][|e][r] Th[|e] S[p]h[|e][r][|e] V[|a]l|u[|e][s]"
+If A=9:Disp "Yo|u Al[r][|e][|a][|d]y H[|a]|v[|e] M[|a]x O[|b]j"
+If A=9:Goto 00
+A+1->A:{43,A}->dim([A]
+Disp "XYZ [p]o[s]i[t]io[n] of S[p]h[|e][r][|e]":Pause 
+Input "X |v[|a]l|u[|e]: ",I:I->[A](1,A):Input "Y |v[|a]l|u[|e]: ",I:I->[A](2,A):Input "Z |v[|a]l|u[|e]: ",I:I->[A](3,A):ClrHome
+Disp "N[|e]x[t] A[r][|e] Ro[t][|a][t]io[n][s]":Pause 
+Input "X Ro[t][|a][t]io[n]: ",I:I->[A](4,A):Input "Y Ro[t][|a][t]io[n]: ",I:I->[A](5,A):Input "Z Ro[t][|a][t]io[n]: ",I:I->[A](6,A):ClrHome
+Disp "N[|e]x[t] R[|a][|d]i|u[s]":Pause 
+Input "S[|c][|a]l[|e]: ",I:abs(I)->[A](7,A)
+Input "X S[|c][|a]l[|e]: ",I:abs(I)->[A](8,A)
+Input "Y S[|c][|a]l[|e]: ",I:abs(I)->[A](9,A)
+Input "Z S[|c][|a]l[|e]: ",I:abs(I)->[A](10,A):ClrHome
+Disp "Sh[|e][|a][r]i[n]g C[r][|a][p]":Pause 
+Input "X [p][r]o[p] Y: ",I:I->[A](11,A):Input "X [p][r]o[p] Z: ",I:I->[A](12,A)
+Input "Y [p][r]o[p] X: ",I:I->[A](13,A):Input "Y [p][r]o[p] Z: ",I:I->[A](14,A)
+Input "Z [p][r]o[p] X: ",I:I->[A](15,A):Input "Z [p][r]o[p] Y: ",I:I->[A](16,A):ClrHome
+Disp "Do yo|u |w[|a][n][t] i[t] P[|a][t][t][|e][r][n][|e][|d]?"
+Disp "0-No, 1-S[t][r]i[p][|e][|d], 2-S[p]i[r][|a]l"
+Input "3-Ch[|e][|c]k[|e][r][|e][|d]: ",I:If I>3:3->I:If I<0:0->I:iPart(I)->[A](17,A)
+Disp "If [n]o[t] P[|a][t][t][|e][r][n][|e][|d] Colo[r] 1"
+Disp "|will [|b][|e] [t]h[|e] f|ull [|c]olo[r]."
+Input "Colo[r] 1: ",I:If I<10:10->I:If I>25:25->I:iPart(I)->[A](18,A)
+Input "Colo[r] 2: ",I:If I<10:10->I:If I>25:25->I:iPart(I)->[A](19,A):ClrHome
+Disp "Am[|b]i[|e][n][|c][|e], Diff|u[s]io[n], "
+Disp "S[p][|e][|c]|ul[|a][r], and Shi[n]i[n][|e][s][s]?"
+Input "Am[|b]i[|e][n][|c][|e] 0-1: ",I:If I>1:1->I:If I<0:0->I:I->[A](20,A)
+Input "Diff|u[s]io[n] 0-1: ",I:If I>1:1->I:If I<0:0->I:I->[A](21,A)
+Input "S[p][|e][|c]|ul[|a][r] 0-1: ",I:If I>1:1->I:If I<0:0->I:I->[A](22,A)
+Input "Shi[n]i[n][|e][s][s] >10(Big): ",I:If I<10:10->I:I->[A](23,A)
+Input "Colo[r] D-\>L, 0-5: ",I:If I>5:5->I:If I<=0:.00000001->I:I->[A](24,A)
+ClrHome
+If [A](17,A)!=0:Then
+	Disp "Th[|e] N[|e]x[t] O[p][t] O[n]ly"
+	Disp "M[|a][t][t][|e][r] if T[|e]x[t]|u[r][|e][s]"
+	Disp "N[|e]x[t] A[r][|e] TxTRo[t][|a][t]io[n][s]":Pause 
+	Input "X Ro[t][|a][t]io[n]: ",I:I->[A](26,A):Input "Y Ro[t][|a][t]io[n]: ",I:I->[A](27,A):Input "Z Ro[t][|a][t]io[n]: ",I:I->[A](28,A):ClrHome
+	Disp "N[|e]x[t] TxTS[|c][|a]l[|e]":Pause 
+	Input "S[|c][|a]l[|e]: ",I:abs(I)->[A](29,A)
+	Input "X S[|c][|a]l[|e]: ",I:abs(I)->[A](30,A)
+	Input "Y S[|c][|a]l[|e]: ",I:abs(I)->[A](31,A)
+	Input "Z S[|c][|a]l[|e]: ",I:abs(I)->[A](32,A):ClrHome
+	Disp "TxTSh[|e][|a][r]i[n]g C[r][|a][p]":Pause 
+	Input "X [p][r]o[p] Y: ",I:I->[A](33,A):Input "X [p][r]o[p] Z: ",I:I->[A](34,A)
+	Input "Y [p][r]o[p] X: ",I:I->[A](35,A):Input "Y [p][r]o[p] Z: ",I:I->[A](36,A)
+	Input "Z [p][r]o[p] X: ",I:I->[A](37,A):Input "Z [p][r]o[p] Y: ",I:I->[A](38,A):ClrHome
+	Input "X |v[|a]l|u[|e]: ",I:I->[A](41,A):Input "Y |v[|a]l|u[|e]: ",I:I->[A](42,A):Input "Z |v[|a]l|u[|e]: ",I:I->[A](43,A):ClrHome
+	Disp "N[|e]x[t] O[n]ly M[|a][t][t][|e][r] If TxT"
+	Disp "i[s] Ch[|e][|c]k[|e][r][|e][|d] or S[p]i[r][|a]l"
+	Input "U[p]-Do|w[n] Am[n][t]: ",I:abs(iPart(I->[A](39,A)
+	Input "A[r]o|u[n][|d] Am[n][t]: ",I:abs(iPart(I->[A](40,A)
+End
+ClrHome:Goto 00
+
+Lbl 02:Disp "Pl[|a][n][|e][s] Allig[n] Wi[t]h IK/XZ"
+If B=9:Disp "Yo|u Al[r][|e][|a][|d]y H[|a]|v[|e] M[|a]x O[|b]j"
+If B=9:Goto 00
+B+1->B:{40,B}->dim([B]
+Disp "T[r][|a][n][s]fo[r]m[|a][t]io[n][s]"
+Disp "XYZ [p]o[s]i[t]io[n] of Pl[|a][n][|e]":Pause 
+Input "X |v[|a]l|u[|e]: ",I:I->[B](1,B):Input "Y |v[|a]l|u[|e]: ",I:I->[B](2,B):Input "Z |v[|a]l|u[|e]: ",I:I->[B](3,B):ClrHome
+Disp "N[|e]x[t] A[r][|e] Ro[t][|a][t]io[n][s]":Pause 
+Input "X Ro[t][|a][t]io[n]: ",I:I->[B](4,B):Input "Y Ro[t][|a][t]io[n]: ",I:I->[B](5,B):Input "Z Ro[t][|a][t]io[n]: ",I:I->[B](6,B):ClrHome
+Disp "N[|e]x[t] S[|c][|a]li[n]g F[|a][|c][t]o[r][s]":Pause 
+Input "S[|c][|a]l[|e]: ",I:abs(I)->[B](7,B)
+Input "X S[|c][|a]l[|e]: ",I:abs(I)->[B](8,B)
+Input "Y S[|c][|a]l[|e]: ",I:abs(I)->[B](9,B)
+Input "Z S[|c][|a]l[|e]: ",I:abs(I)->[B](10,B):ClrHome
+Disp "Sh[|e][|a][r]i[n]g C[r][|a][p]":Pause 
+Input "X [p][r]o[p] Y: ",I:I->[B](11,B):Input "X [p][r]o[p] Z: ",I:I->[B](12,B)
+Input "Y [p][r]o[p] X: ",I:I->[B](13,B):Input "Y [p][r]o[p] Z: ",I:I->[B](14,B)
+Input "Z [p][r]o[p] X: ",I:I->[B](15,B):Input "Z [p][r]o[p] Y: ",I:I->[B](16,B):ClrHome
+Disp "Do yo|u |w[|a][n][t] i[t] P[|a][t][t][|e][r][n][|e][|d]?"
+Disp "0-No, 1-S[t][r]i[p][|e][|d], 2-Ri[n]g[s]"
+Input "3-Ch[|e][|c]k[|e][r][|e][|d]: ",I:If I>3:3->I:If I<0:0->I:iPart(I)->[B](17,B)
+Disp "If [n]o[t] P[|a][t][t][|e][r][n][|e][|d] Colo[r] 1"
+Disp "|will [|b][|e] [t]h[|e] f|ull [|c]olo[r]."
+Input "Colo[r] 1: ",I:If I<10:10->I:If I>25:25->I:iPart(I)->[B](18,B)
+Input "Colo[r] 2: ",I:If I<10:10->I:If I>25:25->I:iPart(I)->[B](19,B):ClrHome
+Disp "Am[|b]i[|e][n][|c][|e], Diff|u[s]io[n], "
+Disp "S[p][|e][|c]|ul[|a][r], and Shi[n]i[n][|e][s][s]?"
+Input "Am[|b]i[|e][n][|c][|e] 0-1: ",I:If I>1:1->I:If I<0:0->I:I->[B](20,B)
+Input "Diff|u[s]io[n] 0-1: ",I:If I>1:1->I:If I<0:0->I:I->[B](21,B)
+Input "S[p][|e][|c]|ul[|a][r] 0-1: ",I:If I>1:1->I:If I<0:0->I:I->[B](22,B)
+Input "Shi[n]i[n][|e][s][s] >10(Big): ",I:If I<10:10->I:I->[B](23,B)
+Input "Colo[r] D-\>L, 0-5: ",I:If I>5:5->I:If I<=0:.00000001->I:I->[B](24,B)
+ClrHome
+If [B](17,B)!=0:Then
+	Disp "Th[|e] N[|e]x[t] O[p][t] O[n]ly"
+	Disp "M[|a][t][t][|e][r] if T[|e]x[t]|u[r][|e][s]"
+	Input "X |v[|a]l|u[|e]: ",I:I->[B](25,B):Input "X |v[|a]l|u[|e]: ",I:I->[B](26,B):Input "Z |v[|a]l|u[|e]: ",I:I->[B](27,B):ClrHome
+	Disp "N[|e]x[t] A[r][|e] TxTRo[t][|a][t]io[n][s]":Pause 
+	Input "X Ro[t][|a][t]io[n]: ",I:I->[B](28,B):Input "Y Ro[t][|a][t]io[n]: ",I:I->[B](29,B):Input "Z Ro[t][|a][t]io[n]: ",I:I->[B](30,B):ClrHome
+	Disp "N[|e]x[t] TxTS[|c][|a]l[|e]":Pause 
+	Input "S[|c][|a]l[|e]: ",I:abs(I)->[B](31,B)
+	Input "X S[|c][|a]l[|e]: ",I:abs(I)->[B](32,B)
+	Input "Y S[|c][|a]l[|e]: ",I:abs(I)->[B](33,B)
+	Input "Z S[|c][|a]l[|e]: ",I:abs(I)->[B](34,B):ClrHome
+	Disp "TxTSh[|e][|a][r]i[n]g C[r][|a][p]":Pause 
+	Input "X [p][r]o[p] Y: ",I:I->[B](35,B):Input "X [p][r]o[p] Z: ",I:I->[B](36,B)
+	Input "Y [p][r]o[p] X: ",I:I->[B](37,B):Input "Y [p][r]o[p] Z: ",I:I->[B](38,B)
+	Input "Z [p][r]o[p] X: ",I:I->[B](39,B):Input "Z [p][r]o[p] Y: ",I:I->[B](40,B):ClrHome
+End
+ClrHome:Goto 00
+
+Lbl 03:Disp "C|u[|b][|e][s]"
+If C=9:Disp "Yo|u Al[r][|e][|a][|d]y H[|a]|v[|e] M[|a]x O[|b]j"
+If C=9:Goto 00
+C+1->C:{42,C}->dim([C]
+Disp "T[r][|a][n][s]fo[r]m[|a][t]io[n][s]"
+Disp "XYZ [p]o[s]i[t]io[n] of C|u[|b][|e]":Pause 
+Input "X |v[|a]l|u[|e]: ",I:I->[C](1,C):Input "Y |v[|a]l|u[|e]: ",I:I->[C](2,C):Input "Z |v[|a]l|u[|e]: ",I:I->[C](3,C):ClrHome
+Disp "N[|e]x[t] A[r][|e] Ro[t][|a][t]io[n][s]":Pause 
+Input "X Ro[t][|a][t]io[n]: ",I:I->[C](4,C):Input "Y Ro[t][|a][t]io[n]: ",I:I->[C](5,C):Input "Z Ro[t][|a][t]io[n]: ",I:I->[C](6,C):ClrHome
+Disp "N[|e]x[t] S[|c][|a]li[n]g F[|a][|c][t]o[r][s]":Pause 
+Input "S[|c][|a]l[|e]: ",I:abs(I)->[C](7,C)
+Input "X S[|c][|a]l[|e]: ",I:abs(I)->[C](8,C)
+Input "Y S[|c][|a]l[|e]: ",I:abs(I)->[C](9,C)
+Input "Z S[|c][|a]l[|e]: ",I:abs(I)->[C](10,C):ClrHome
+Disp "Sh[|e][|a][r]i[n]g C[r][|a][p]":Pause 
+Input "X [p][r]o[p] Y: ",I:I->[C](11,C):Input "X [p][r]o[p] Z: ",I:I->[C](12,C)
+Input "Y [p][r]o[p] X: ",I:I->[C](13,C):Input "Y [p][r]o[p] Z: ",I:I->[C](14,C)
+Input "Z [p][r]o[p] X: ",I:I->[C](15,C):Input "Z [p][r]o[p] Y: ",I:I->[C](16,C):ClrHome
+Disp "Do yo|u |w[|a][n][t] i[t] P[|a][t][t][|e][r][n][|e][|d]?"
+Disp "0-No, 1-S[t][r]i[p][|e][|d],"
+Input "2-S[p]i[r][|a]li[s]h, 3-Ch[|e][|c]k[|e][r][|e][|d]: ",I:If I>3:3->I:If I<0:0->I:iPart(I)->[C](17,C)
+Disp "If [n]o[t] P[|a][t][t][|e][r][n][|e][|d] Colo[r] 1"
+Disp "|will [|b][|e] [t]h[|e] f|ull [|c]olo[r]."
+Input "Colo[r] 1: ",I:If I<10:10->I:If I>25:25->I:iPart(I)->[C](18,C)
+Input "Colo[r] 2: ",I:If I<10:10->I:If I>25:25->I:iPart(I)->[C](19,C):ClrHome
+Disp "Am[|b]i[|e][n][|c][|e], Diff|u[s]io[n], "
+Disp "S[p][|e][|c]|ul[|a][r], and Shi[n]i[n][|e][s][s]?"
+Input "Am[|b]i[|e][n][|c][|e] 0-1: ",I:If I>1:1->I:If I<0:0->I:I->[C](20,C)
+Input "Diff|u[s]io[n] 0-1: ",I:If I>1:1->I:If I<0:0->I:I->[C](21,C)
+Input "S[p][|e][|c]|ul[|a][r] 0-1: ",I:If I>1:1->I:If I<0:0->I:I->[C](22,C)
+Input "Shi[n]i[n][|e][s][s] >10(Big): ",I:If I<10:10->I:I->[C](23,C)
+Input "Colo[r] D-\>L, 0-5: ",I:If I>5:5->I:If I<=0:.00000001->I:I->[C](24,C)
+ClrHome
+If [C](17,C)!=0:Then
+	Disp "Th[|e] N[|e]x[t] O[p][t] O[n]ly"
+	Disp "M[|a][t][t][|e][r] if T[|e]x[t]|u[r][|e][s]"
+	Input "X |v[|a]l|u[|e]: ",I:I->[C](25,C):Input "Y |v[|a]l|u[|e]: ",I:I->[C](26,C):Input "Z |v[|a]l|u[|e]: ",I:I->[C](27,C):ClrHome
+	Disp "N[|e]x[t] A[r][|e] TxTRo[t][|a][t]io[n][s]":Pause 
+	Input "X Ro[t][|a][t]io[n]: ",I:I->[C](28,C):Input "Y Ro[t][|a][t]io[n]: ",I:I->[C](29,C):Input "Z Ro[t][|a][t]io[n]: ",I:I->[C](30,C):ClrHome
+	Disp "N[|e]x[t] TxTS[|c][|a]l[|e]":Pause 
+	Input "S[|c][|a]l[|e]: ",I:abs(I)->[C](31,C)
+	Input "X S[|c][|a]l[|e]: ",I:abs(I)->[C](32,C)
+	Input "Y S[|c][|a]l[|e]: ",I:abs(I)->[C](33,C)
+	Input "Z S[|c][|a]l[|e]: ",I:abs(I)->[C](34,C):ClrHome
+	Disp "TxTSh[|e][|a][r]i[n]g C[r][|a][p]":Pause 
+	Input "X [p][r]o[p] Y: ",I:I->[C](35,C):Input "X [p][r]o[p] Z: ",I:I->[C](36,C)
+	Input "Y [p][r]o[p] X: ",I:I->[C](37,C):Input "Y [p][r]o[p] Z: ",I:I->[C](38,C)
+	Input "Z [p][r]o[p] X: ",I:I->[C](39,C):Input "Z [p][r]o[p] Y: ",I:I->[C](40,C):ClrHome
+	Disp "N[|e]x[t] O[n]ly M[|a][t][t][|e][r] If TxT"
+	Disp "i[s] S[p]i[r][|a]li[s]h"
+	Input "U[p]-Do|w[n] Am[n][t]: ",I:abs(iPart(I->[C](41,C)
+	Input "A[r]o|u[n][|d] Am[n][t]: ",I:abs(iPart(I->[C](42,C)
+End
+ClrHome:Goto 00
+
+Lbl 06:Disp "E[n][t][|e][r] 9 C[|a]m [n]|um[s]:":Pause 
+Disp "Th[|e] IJK [|c]oo[r][|d]i[n][|a][t][|e][s] of C[|a]m"
+Input "I |v[|a]l|u[|e]: ",I:I->[F](1,1):Input "J |v[|a]l|u[|e]: ",I:I->[F](2,1):Input "K |v[|a]l|u[|e]: ",I:I->[F](3,1)
+Disp "Th[|e] [p][n][t] [t]h[|e] C[|a]m [p]oi[n][t][s] [|a][t]"
+Input "V[|e][|c] I |v[|a]l|u[|e]: ",I:I->[G](1,1):Input "V[|e][|c] J |v[|a]l|u[|e]: ",I:I->[G](2,1):Input "V[|e][|c] K |v[|a]l|u[|e]: ",I:I->[G](3,1)
+Disp "Th[|e] [p][n][t] [t]h[|e] To[p] [p][n][t][s] [|a][t]"
+Input "TV[|e][|c] I |v[|a]l|u[|e]: ",I:I->[G](1,2):Input "V[|e][|c] J |v[|a]l|u[|e]: ",I:I->[G](2,2):Input "V[|e][|c] K |v[|a]l|u[|e]: ",I:I->[G](3,2):ClrHome:Goto 00
+
+Lbl 07:
+O+1->O
+{6,O}->dim([H]
+Disp "E[n][t][|e][r] 6 Ligh[t] [n]|um[s]:":Pause 
+Disp "Ligh[t] Po[s]i[t]io[n]"
+Input "I |v[|a]l|u[|e]: ",I:I->[H](1,O):Input "J |v[|a]l|u[|e]: ",I:I->[H](2,O):Input "K |v[|a]l|u[|e]: ",I:I->[H](3,O)
+Disp "Ligh[t][s]: "
+Input "Am[|b]i[|e][n][|c][|e] 0-1: ",I:If I>1:1->I:If I<0:0->I:I->[H](4,O)
+Input "Diff|u[s]io[n] 0-1: ",I:If I>1:1->I:If I<0:0->I:I->[H](5,O)
+Input "S[p][|e][|c]|ul[|a][r] 0-1: ",I:If I>1:1->I:If I<0:0->I:I->[H](6,O):ClrHome:Goto 00
+
+Lbl 09:If A<0 or B<0 or C<0 or D<0 or E<0:Then:ClrHome:Goto 00:End
+
+
+
+
+
+If O=0:{6,1}->dim([H]
+If O=0:[[0][10][0][1][1][1]]->[H]
+If O=0:1->O
+
+"S[t]|uff To m[|a]k[|e] S|u[r][|e] M[|e][n]|u Wo[r]k[s]
+
+
+"Ch[|a][n]g[|e] G [t]o [|c]h[|e][|c]k if [t]h[|e]y [|a][r][|e] [|a][|c][t]|u[|a]lly |v[|e][|c][t]o[r][s]
+For(I,1,3:[G](I,1)-[F](I,1)->[G](I,1):[G](I,2)-[F](I,1)->[G](I,2):End
+If ([G](1,1)=0 and [G](2,1)=0 and [G](3,1)=0) or ([G](1,2)=0 and [G](2,2)=0 and [G](3,2)=0)
+Then:Disp "C[|a]m[|e][r][|a] V[|e][|c] Do[n][t] Wo[r]k":Pause :ClrHome:Goto 00:End
+DelVar I:[G]:prgmthetaCROSS
+If Ans(1,1)=0 and Ans(2,1)=0 and Ans(3,1)=0
+Then:Disp "C[|a]m[|e][r][|a] V[|e][|c] Do[n][t] Wo[r]k":Pause :ClrHome:Goto 00:End
+ClrHome
+
+
+"M[|a]ki[n]g S|u[r][|e] M[|a][t][r]ix'[s] A [|a][r][|e] I[n]|v[|e][r][t][|a][|b]l[|e]
+If A:Then
+	For(F,1,A)
+		F
+		Ans+.1
+		prgmthetaREGTRAN
+		If det(Ans)=0:Then
+			F->S
+		End
+		If [A](17,F):Then
+			F
+			Ans+.1
+			prgmthetaTXTTRAN
+			If det(Ans)=0:Then
+				F->S
+			End
+		End
+	End
+End
+DelVar I
+DelVar F
+If S:Then
+	ClrHome
+	Disp "S[p]h[|e][r][|e]"+toString(S)+"Will No[t] Wo[r]k"
+	Pause 
+	If S!=A and A!=1:Then
+		For(I,S,A-1
+			rowSwap([A]^^T,I,I+1)^^T->[A]
+		End
+	End
+	A-1->A
+	If A=0:DelVar [A]
+	If A!=0:{43,A}->dim([A])
+End
+DelVar I
+If S:Goto 00
+
+"M[|a]ki[n]g S|u[r][|e] M[|a][t][r]ix'[s] B [|a][r][|e] I[n]|v[|e][r][t][|a][|b]l[|e]
+If B:Then
+	For(F,1,B)
+		F
+		Ans+.2
+		prgmthetaREGTRAN
+		If det(Ans)=0:Then
+			F->S
+		End
+		If [B](17,F):Then
+			F
+			Ans+.2
+			prgmthetaTXTTRAN
+			If det(Ans)=0:Then
+				F->S
+			End:"If det(Ans)=0
+		End:"If [B](17,F)
+	End:"For(F,1,B)
+End:"If B
+DelVar I
+DelVar F
+If S:Then
+	ClrHome
+	Disp "Pl[|a][n][|e]"+toString(S)+"Will No[t] Wo[r]k"
+	Pause 
+	If S!=B and B!=1:Then
+		For(I,S,B-1
+			rowSwap([B]^^T,I,I+1)^^T->[B]
+		End
+	End
+	B-1->B
+	If B=0:DelVar [B]
+	If B!=0:{40,B}->dim([B])
+End
+DelVar I
+If S:Goto 00
+
+If C:Then
+	For(F,1,C)
+		F
+		Ans+.3
+		prgmthetaREGTRAN
+		If det(Ans)=0:Then
+			F->S
+		End
+		If [C](17,F):Then
+			F
+			Ans+.3
+			prgmthetaTXTTRAN
+			If det(Ans)=0:Then
+				F->S
+			End:"If det(Ans)=0
+		End:"If [C](17,F)
+	End:"For(F,1,C)
+End:"If C
+DelVar I
+DelVar F
+If S:Then
+	ClrHome
+	Disp "C|u[|b][|e]"+toString(S)+"Will No[t] Wo[r]k"
+	Pause 
+	If S!=C and C!=1:Then
+		For(I,S,C-1
+			rowSwap([C]^^T,I,I+1)^^T->[C]
+		End
+	End
+	C-1->C
+	If C=0:DelVar [C]
+	If C!=0:{42,C}->dim([C])
+End
+DelVar I
+If S:Goto 00
+
+
+
+
+
+
+DelVar S
+"A-F
+"B-G
+"C-H
+"D-J
+"E-K
+
+
+
+
+
+
+
+
+
+
+
+
+"Al[t][|e][r]i[n]g o[r]igi[n][s] [t]o [|c]om[p][|e][n][s][|a][t][|e] fo[r] [|c][|a]m[|e][r][|a]
+For(K,1,O
+For(I,1,3:[H](I,O)-[F](I,1)->[H](I,O):End
+End
+
+If A:Then:For(F,1,A:For(I,1,3:[A](I,F)-[F](I,1)->[A](I,F):End:End:End
+If B:Then:For(G,1,B:For(I,1,3:[B](I,G)-[F](I,1)->[B](I,G):End:End:End
+If C:Then:For(H,1,C:For(I,1,3:[C](I,H)-[F](I,1)->[C](I,H):End:End:End
+If D:Then::End
+If E:Then::End
+DelVar [F]
+DelVar I
+DelVar F
+DelVar K
+DelVar G
+DelVar H
+
+
+
+
+
+
+
+"Fi[n][|d]i[n]g [t]h[|e] [J] [t][r][|a][n]fo[r]m[|a][t]io[n] m[|a][t][r]ix fo[r] [|c][|a]m[|e][r][|a] |v[|e][|c][t]o[r][s]
+If [G]=[[0,0][0,1][1,0]]:Then:DelVar [G]:0->V
+Else:
+	1->V
+	[[[G](1,1)][[G](2,1)][[G](3,1)]]:prgmthetaNORM:Ans->[J]
+	[[[G](1,2)][[G](2,2)][[G](3,2)]]:prgmthetaNORM
+	[[Ans(1,1),[J](1,1)][Ans(2,1),[J](2,1)][Ans(3,1),[J](3,1)]]:DelVar [G]
+	prgmthetaCROSS:prgmthetaNORM:augment(Ans,[J]->[J]
+	[[[J](1,2),[J](1,1)][[J](2,2),[J](2,1)][[J](3,2),[J](3,1)]]
+	prgmthetaCROSS:prgmthetaNORM:augment(Ans,[J]->[J]:rowSwap([J]^^T,1,2)^^T->[J]
+End
+DelVar I
+
+
+
+
+
+
+
+
+
+DelVar S
+DelVar [I]:DelVar R:"R i[s] R[|e]fl[|e][|c][t]io[n] 
+[[~1+(1/132)][41/66-(1/132)][1]]->[G]
+For(Y,0,82-1
+	For(X,0,132-1
+		
+		
+		"C[r][|e][|a][t]i[n]g [t]h[|e] R[|a]y V[|e][|c][t]o[r]
+		DelVar [F]
+		If V:Then
+			[J][G]:prgmthetaNORM:Ans->[F]
+		Else:[G]:prgmthetaNORM:Ans->[F]
+		End
+		{4,2}->dim([F]:0->[F](4,1):1->[F](4,2)
+		"[F] i[s] [t]h[|e] |v[|e][|c][t]o[r] of [t]h[|e] Fi[n][|a]l [r][|a]y, [F](x,1/3) i[s] [t]h[|e] [|d]i[r][|e][|c][t]io[n], [F](x,2/4) i[s] [t]h[|e] o[r]igi[n] fo[r] [s][p]h[|e][r][|e]
+		"Q i[s] m[|a][t][r]ix |v[|a]l|u[|e] [s][p][|a][n][n]i[n]g [|a]ll m[|a][t][r]ix[|e][s]
+		"M [|a][|c][r]o[s][s] fo[r] m[|a][t][r]ix of o[|b]j'[s]
+		"LT i[n][t][|e][r][s][|e][|c][t]io[n][s] and  o[|b]j lo[|c][|a][t]io[n] lik[|e] x.y
+		"LM i[s] |u[s][|e][|d] [t]o [s][t]o[r][|e] [|a][|b][|c] |v[|a]l[s] fo[r] i[n][t][|e][r][|e][s][|e][|c][t] fo[r] [s][p]h[|e][r][|e][s]
+		
+		
+		
+		
+		If A+B+C+D+E>0:Then
+			Lbl 10
+			DelVar S:DelVar M:DelVar N:DelVar |LM
+			DelVar T:DelVar |LT:DelVar L:DelVar |LL
+			DelVar |LM:DelVar J:DelVar U:DelVar W
+			{0}->|LT
+			For(Q,1,A+B+C+D+E)
+				
+				
+				
+				
+				
+				
+				"Fi[n][|d]i[n]g All I[n][t][|e][r][s][|e][|c][t]io[n][s]
+				If Q<=A:Then
+					
+					"S[p]h[|e][r][|e]
+					Q->M
+					4->dim(|LM
+					M+.1
+					prgmthetaREGTRAN
+					(Ans)^^-1*[F]
+					augment([F],Ans)->[F]
+					[[[F](1,3),[F](1,3)][[F](2,3),[F](2,3)][[F](3,3),[F](3,3)]]
+					prgmthetaDOT:Ans->|LM(1)
+					[[[F](1,3),[F](1,4)][[F](2,3),[F](2,4)][[F](3,3),[F](3,4)]]
+					prgmthetaDOT:2*Ans->|LM(2)
+					[[[F](1,4),[F](1,4)][[F](2,4),[F](2,4)][[F](3,4),[F](3,4)]]
+					prgmthetaDOT:Ans-1->|LM(3)
+					(|LM(2)^2)-(4*(|LM(1))*(|LM(3)))->|LM(4)
+					If |LM(4)>0:Then
+					If dim(|LT)=1:Then:(~|LM(2)+sqrt(|LM(4)))/(2*|LM(1))->|LT(1):Else
+						(~|LM(2)+sqrt(|LM(4)))/(2*|LM(1))->|LT(dim(|LT)+1):End
+						(~|LM(2)-sqrt(|LM(4)))/(2*|LM(1))->|LT(dim(|LT)+1)
+						M+.1->|LT(dim(|LT)+1)
+					End
+					DelVar M:DelVar |LM
+					
+				Else:
+					
+					
+					If (Q-A)<=B:Then
+						
+						"Pl[|a][n][|e]
+						Q-A->M
+						M+.2
+						prgmthetaREGTRAN
+						(Ans)^^-1*[F]
+						augment([F],Ans)->[F]
+						If abs([F](2,3))>.00000001:Then
+							~[F](2,4)/[F](2,3)
+					If dim(|LT)=1:Then:Ans->|LT(1):Else:Ans->|LT(dim(|LT)+1):End
+							0->|LT(dim(|LT)+1)
+							M+.2->|LT(dim(|LT)+1)
+						End
+						
+					Else:
+						
+						If (Q-(A+B))<=C:Then
+							"N[|e]x[t] O[|b]j
+							Q-(A+B)->M
+							1->dim(|LM
+							M+.3
+							prgmthetaREGTRAN
+							(Ans)^^-1*[F]
+							augment([F],Ans)->[F]
+							
+							DelVar H
+							For(H,1,3)
+								3->dim(|LC
+								
+								If abs([F](H,3))>.00000001:Then
+									(1-[F](H,4))/[F](H,3)->|LC(1)
+									(~1-[F](H,4))/[F](H,3)->|LC(2)
+									1->|LC(3)
+								Else
+									69->|LC(1)
+									69->|LC(2)
+									0->|LC(3)
+								End:"If [F](H,3)>.00000001
+								
+								If |LC(3)=1:Then
+									If |LC(1)>|LC(2):{|LC(2),|LC(1),1}->|LC
+									augment({|LC(1),|LC(2)},|LM)->|LM
+								End:"If |LC(3)=1
+								DelVar |LC
+							End:"For(H,1,3)
+							
+							DelVar H
+							If dim(|LM)>1:Then
+								(dim(|LM)-1)->dim(|LM)
+								If int(dim(|LM)/2)=1:Then
+							If dim(|LT)=1:Then:|LM(1)->|LT(1):Else:|LM(1)->|LT(dim(|LT)+1):End
+									|LM(2)->|LT(dim(|LT)+1)
+									M+.3->|LT(dim(|LT)+1)
+								Else
+									
+									If int(dim(|LM)/2)=2:Then
+								If dim(|LT)=1:Then:max(|LM(1),|LM(3))->|LT(1):Else:max(|LM(1),|LM(3))->|LT(dim(|LT)+1):End
+										min(|LM(2),|LM(4))->|LT(dim(|LT)+1)
+										M+.3->|LT(dim(|LT)+1)
+									Else
+										
+										If int(dim(|LM)/2)=3:Then
+									If dim(|LT)=1:Then:max({|LM(1),|LM(3),|LM(5)})->|LT(1):Else:max({|LM(1),|LM(3),|LM(5)})->|LT(dim(|LT)+1):End
+											min({|LM(2),|LM(4),|LM(6)})->|LT(dim(|LT)+1)
+											M+.3->|LT(dim(|LT)+1)
+										End:"If int(dim(|LM)/2)=3
+										
+									End:"If int(dim(|LM)/2)=2
+								End:"If int(dim(|LM)/2)=1
+								DelVar |LM:DelVar H:DelVar |LC
+							If |LT(dim(|LT)-2)>|LT(dim(|LT)-1):Then:dim(|LT)-3->dim(|LT):End
+							End:"If dim(|LM)>1
+							
+						End:"If Q-(A+B)<=C
+					End:"If Q-A<=B
+				End:"If Q<=A
+				DelVar S:DelVar M:DelVar N:DelVar |LM:DelVar |LX
+				{4,2}->dim([F]
+			End:"For(Q,1,A+B+C+D+E)
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			"Colo[r] M[|a][t]h/Ligh[t] M[|a][t]h
+			"17,18,19-Colo[r]Ch[r]om[|e]/Ch[|e][|c]k[|e][r][|e][|d]
+			"T i[s] |u[s][|e][|d] fo[r] [|c]lo[s][|e][s][t] [p]oi[n][t] [r]igh[t] [n]o|w
+			"U i[s] |u[s][|e][|d] fo[r] [t]h[|e] o[|b]j[|e][|c][t] of [t]h[|e] [|c]lo[s][|e][s][t] o[|b]j[|e][|c][t]
+			"U[s][|e] R and K fo[r] [r][|e]fl[|e][|c][t]io[n][s] o[n] [|c]h[r]om[|e] [s]|u[r]f[|a][|c][|e]
+			
+			
+			
+			
+			
+			
+			"Fi[n][|d]i[n]g Clo[s][|e][s][t] [p]o[s][s]i[|b]l[|e] i[n][t][|e][r][s][|e][|c][t]io[n] and if i[n][s]i[|d][|e]
+			If dim(|LT)>1:Then:
+				"U[s][|e] S [t]o [|d][|e][t][|e][r]mi[n][|e] if yo|u [|a][r][|e] i[n][s]i[|d][|e] [t]h[|e] o[|b]j 1-i[n][s]i[|d][|e], 0-o|u[t][s]i[|d][|e]
+				For(I,0,((dim(|LT)/3)-1):
+					I*3->I
+					
+					"S[p]h[|e][r][|e]
+					If fPart(|LT(I+3))=.1:Then
+						"Fi[n][|d]i[n]g [t]h[|e] [|c]lo[s][|e][s][t] [p]oi[n][t] of I[n][t][|e][r][s][|e][|c][t]io[n]
+						If (|LT(I+1)>0 and |LT(I+1)<T) or (|LT(I+1)>0 and T=0):Then
+							|LT(I+1)->T
+							|LT(I+3)->U
+						End
+						If (|LT(I+2)>0 and |LT(I+2)<T) or (|LT(I+2)>0 and T=0):Then
+							|LT(I+2)->T
+							|LT(I+3)->U
+						End
+					Else
+						
+						"Pl[|a][n][|e]
+						If fPart(|LT(I+3))=.2:Then
+							If (|LT(I+1)>0 and |LT(I+1)<T) or (|LT(I+1)>0 and T=0):Then
+								|LT(I+1)->T
+								|LT(I+3)->U
+							End
+						Else
+							
+							If fPart(|LT(I+3))=.3:Then
+								If (|LT(I+1)>0 and |LT(I+1)<T) or (|LT(I+1)>0 and T=0):Then
+									|LT(I+1)->T
+									|LT(I+3)->U
+								End
+								If (|LT(I+2)>0 and |LT(I+2)<T) or (|LT(I+2)>0 and T=0):Then
+									|LT(I+2)->T
+									|LT(I+3)->U
+								End
+							Else
+								
+								"Mo[r][|e] Sh[|a][p][|e][s] [|c]omi[n]g [s]oo[n]
+								
+							End:"If fPart(|LT(I+3))=.3
+						End:"If fPart(|LT(I+3))=.2
+					End:"If fPart(|LT(I+3))=.1
+				End:"For(I,0,((dim(|LT)/3)-1)
+				
+				
+				
+				"V[|e][|c][t]o[r][s] Fo[r] Ligh[t]
+				DelVar |LT
+				If U!=0:Then:
+					
+					"S[p]h[|e][r][|e]
+					If fPart(U)=.1:Then
+						6->dim(|LB)
+						[A](20,iPart(U))->|LB(1)
+						[A](21,iPart(U))->|LB(2)
+						[A](22,iPart(U))->|LB(3)
+						[A](23,iPart(U))->|LB(4)
+						[A](24,iPart(U))->|LB(5)
+						3->dim(|LT
+						"U[s][|e] |LT fo[r] m[|a][t]h i[n]|vol|vi[n]g fi[n][|d]i[n]g |v[|e][|c][t]o[r][s]
+						"O[r]igi[n] [p]oi[n][t] fo[r] |v[|e][|c][t]o[r][s] 1,2,3
+						"Normal V[|e][|c][t]o[r] [t]o [s][p]h[|e][r][|e] [s]|u[r]f[|a][|c][|e] 4,5,6
+						"Ey[|e] |v[|e][|c][t]o[r] 7,8,9
+						"Ligh[t] V[|e][|c][t]o[r] 10,11,12
+						"R[|e]fl[|e][|c][t][|e][|d] Ligh[t] V[|e][|c][t]o[r] 13,14,15
+						{[F](1,1)*T+[F](1,2),[F](2,1)*T+[F](2,2),[F](3,1)*T+[F](3,2)}->|LL
+						U
+						prgmthetaREGTRAN
+						(Ans^^-1)*[[|LL(1)][|LL(2)][|LL(3)][1]]
+						{Ans(1,1),Ans(2,1),Ans(3,1)}->|LT
+						U
+						prgmthetaREGTRAN
+						(Ans^^-1)^^T*[[|LT(1)][|LT(2)][|LT(3)][0]]
+						[[Ans(1,1)][Ans(2,1)][Ans(3,1)]]
+						prgmthetaNORM
+						augment(|LL,{Ans(1,1),Ans(2,1),Ans(3,1)})->|LL
+						[[[F](1,2)-|LL(1)][[F](2,2)-|LL(2)][[F](3,2)-|LL(3)]]
+						prgmthetaNORM
+						augment(|LL,{Ans(1,1),Ans(2,1),Ans(3,1)})->|LL
+						"If I[n][s]i[|d][|e] [r][|e]|v[|e][r][s][|e] [t]h[|e] [n]o[r]m
+						[[|LL(4),|LL(7)][|LL(5),|LL(8)][|LL(6),|LL(9)]]
+						prgmthetaDOT
+						If Ans<0:Then
+							~|LL(4)->|LL(4)
+							~|LL(5)->|LL(5)
+							~|LL(6)->|LL(6)
+							1->S
+						End
+						"A[|d]j|u[s][t]i[n]g [t]h[|e] o[r]igi[n] [p][n][t] fo[r] [s][|a]f[t][|e]y
+						(.00000001*|LL(4))+|LL(1)->|LL(1)
+						(.00000001*|LL(5))+|LL(2)->|LL(2)
+						(.00000001*|LL(6))+|LL(3)->|LL(3)
+						
+						
+						"P[|a][t][t][|e][r][n] M[|a][t]h
+						If [A](17,iPart(U)):Then
+							U
+							prgmthetaREGTRAN
+							(Ans^~1)*[[|LL(1)][|LL(2)][|LL(3)][1]]
+							{Ans(1,1),Ans(2,1),Ans(3,1)}->|LX:"O[|b]j [p]oi[n][t]
+							U
+							prgmthetaTXTTRAN
+							(Ans^~1)*[[|LX(1)][|LX(2)][|LX(3)][1]]
+							{Ans(1,1),Ans(2,1),Ans(3,1)}->|LX:"S[t][r]i[p][|e] P[t][r][n] [p]oi[n][t]
+							If iPart([A](17,iPart(U)))=1:Then
+								
+								If fPart(int(|LX(1))/2)=0:Then
+									[A](18,iPart(U))->W
+								Else
+									[A](19,iPart(U))->W
+								End
+								
+							Else
+								
+								If iPart([A](17,iPart(U)))=2:Then
+									[[|LX(1)][|LX(2)][|LX(3)]]
+									prgmthetaNORM
+									{Ans(1,1),Ans(2,1),Ans(3,1)}->|LX
+								If |LX(3)=0:Then:0->|LX(1):1->|LX(3):End
+									{tan^-1(|LX(1)/|LX(3))/(2pi),cos^-1(|LX(2))/pi}
+									DelVar |LX
+									{.5-Ans(1),1-Ans(2)}
+									{Ans(1)*[A](40,iPart(U)),Ans(2)*[A](39,iPart(U))}
+									sum(Ans)
+									If fPart(int(Ans)/2)=0:Then
+										[A](19,iPart(U))->W
+									Else
+										[A](18,iPart(U))->W
+									End
+									
+								Else
+									
+									[[|LX(1)][|LX(2)][|LX(3)]]
+									prgmthetaNORM
+									{Ans(1,1),Ans(2,1),Ans(3,1)}->|LX
+								If |LX(3)=0:Then:0->|LX(1):1->|LX(3):End
+									{tan^-1(|LX(1)/|LX(3))/(2pi),cos^-1(|LX(2))/pi}
+									DelVar |LX
+									{.5-Ans(1),1-Ans(2)}
+									{Ans(1)*[A](40,iPart(U)),Ans(2)*[A](39,iPart(U))}
+									{int(Ans(1)),int(Ans(2))}
+									sum(Ans)
+									If fPart(Ans/2)=0:Then
+										[A](19,iPart(U))->W
+									Else
+										[A](18,iPart(U))->W
+									End
+									
+								End
+							End
+						Else
+							[A](18,iPart(U))->W
+						End
+						DelVar |LX
+						
+						DelVar |LT
+						3->dim(|LT
+					Else
+						
+						If fPart(U)=.2:Then
+							
+							"Pl[|a][n][|e][s]
+							6->dim(|LB)
+							[B](20,iPart(U))->|LB(1)
+							[B](21,iPart(U))->|LB(2)
+							[B](22,iPart(U))->|LB(3)
+							[B](23,iPart(U))->|LB(4)
+							[B](24,iPart(U))->|LB(5)
+							"O[r]igi[n] 1,2,3
+							{[F](1,1)*T+[F](1,2),[F](2,1)*T+[F](2,2),[F](3,1)*T+[F](3,2)}->|LL
+							U
+							prgmthetaREGTRAN
+							(Ans^^-1)^^T*[[0][1][0][0]]
+							[[Ans(1,1)][Ans(2,1)][Ans(3,1)]]
+							prgmthetaNORM
+							augment(|LL,{Ans(1,1),Ans(2,1),Ans(3,1)})->|LL
+							"Normal 4,5,6
+							[[[F](1,2)-|LL(1)][[F](2,2)-|LL(2)][[F](3,2)-|LL(3)]]
+							prgmthetaNORM
+							augment(|LL,{Ans(1,1),Ans(2,1),Ans(3,1)})->|LL
+							"Ey[|e] V[|e][|c][t]o[r] 7,8,9
+							[[|LL(4),|LL(7)][|LL(5),|LL(8)][|LL(6),|LL(9)]]
+							prgmthetaDOT
+							If Ans<0:Then
+								~|LL(4)->|LL(4)
+								~|LL(5)->|LL(5)
+								~|LL(6)->|LL(6)
+							End
+							(.00000001*|LL(4))+|LL(1)->|LL(1)
+							(.00000001*|LL(5))+|LL(2)->|LL(2)
+							(.00000001*|LL(6))+|LL(3)->|LL(3)
+							
+							"P[|a][t][t][|e][r][n] M[|a][t]h
+							If [B](17,iPart(U)):Then
+								U
+								prgmthetaREGTRAN
+								(Ans^~1)*[[|LL(1)][|LL(2)][|LL(3)][1]]
+								{Ans(1,1),Ans(2,1),Ans(3,1)}->|LX:"O[|b]j [p]oi[n][t]
+								U
+								prgmthetaTXTTRAN
+								(Ans^~1)*[[|LX(1)][|LX(2)][|LX(3)][1]]
+								{Ans(1,1),Ans(2,1),Ans(3,1)}->|LX:"P[t][r][n] [p]oi[n][t]
+								
+								If iPart([B](17,iPart(U)))=1:Then
+									If fPart(int(|LX(1))/2)=0:Then
+										[B](18,iPart(U))->W
+									Else
+										[B](19,iPart(U))->W
+									End
+								Else
+									
+									If iPart([B](17,iPart(U)))=2:Then
+										If fPart(int(sqrt(|LX(1)^2+|LX(3)^2))/2)=0:Then
+											[B](18,iPart(U))->W
+										Else
+											[B](19,iPart(U))->W
+										End
+									Else
+										
+										If fPart((int(|LX(1))+int(|LX(3)))/2)=0:Then
+											[B](18,iPart(U))->W
+										Else
+											[B](19,iPart(U))->W
+										End
+										
+									End:"If iPart([B](17,iPart(U)))=2
+								End:"If iPart([B](17,iPart(U)))=1
+								DelVar |LX
+								DelVar |LT
+								3->dim(|LT
+							Else
+								[B](18,iPart(U))->W
+							End
+						Else
+							
+							If fPart(U)=.3:Then
+								[C](20,iPart(U))->|LB(1)
+								[C](21,iPart(U))->|LB(2)
+								[C](22,iPart(U))->|LB(3)
+								[C](23,iPart(U))->|LB(4)
+								[C](24,iPart(U))->|LB(5)
+								{[F](1,1)*T+[F](1,2),[F](2,1)*T+[F](2,2),[F](3,1)*T+[F](3,2)}->|LL
+								
+								U
+								prgmthetaREGTRAN
+								(Ans^^-1)*[[|LL(1)][|LL(2)][|LL(3)][1]]
+								{Ans(1,1),Ans(2,1),Ans(3,1)}->|LT
+								"O[|b]j[|e][|c][t] Poi[n][t]
+								If max(abs(|LT))=abs(|LT(1)):{|LL(1),0,0}->|LT
+								If max(abs(|LT))=abs(|LT(2)):{0,|LL(2),0}->|LT
+								If max(abs(|LT))=abs(|LT(3)):{0,0,|LL(3)}->|LT
+								sqrt(sum((|LT)^^2)):|LT/Ans->|LT
+								U
+								prgmthetaREGTRAN
+								(Ans^^-1)^^T*[[|LT(1)][|LT(2)][|LT(3)][0]]
+								[[Ans(1,1)][Ans(2,1)][Ans(3,1)]]
+								prgmthetaNORM
+								augment(|LL,{Ans(1,1),Ans(2,1),Ans(3,1)})->|LL
+								
+								[[[F](1,2)-|LL(1)][[F](2,2)-|LL(2)][[F](3,2)-|LL(3)]]
+								prgmthetaNORM
+								augment(|LL,{Ans(1,1),Ans(2,1),Ans(3,1)})->|LL
+								"Ey[|e] V[|e][|c][t]o[r] 7,8,9
+								[[|LL(4),|LL(7)][|LL(5),|LL(8)][|LL(6),|LL(9)]]
+								prgmthetaDOT
+								If Ans<0:Then
+									~|LL(4)->|LL(4)
+									~|LL(5)->|LL(5)
+									~|LL(6)->|LL(6)
+									1->S
+								End
+								(.00000001*|LL(4))+|LL(1)->|LL(1)
+								(.00000001*|LL(5))+|LL(2)->|LL(2)
+								(.00000001*|LL(6))+|LL(3)->|LL(3)
+								
+								If [C](17,iPart(U)):Then
+									U
+									prgmthetaREGTRAN
+									(Ans^~1)*[[|LL(1)][|LL(2)][|LL(3)][1]]
+									{Ans(1,1),Ans(2,1),Ans(3,1)}->|LX:"O[|b]j [p]oi[n][t]
+									U
+									prgmthetaTXTTRAN
+									(Ans^~1)*[[|LX(1)][|LX(2)][|LX(3)][1]]
+									{Ans(1,1),Ans(2,1),Ans(3,1)}->|LX:"P[t][r][n] [p]oi[n][t]
+									If iPart([C](17,iPart(U)))=1:Then
+										If fPart(int(|LX(1))/2)=0:Then
+											[C](18,iPart(U))->W
+										Else
+											[C](19,iPart(U))->W
+										End
+									Else
+										If iPart([C](17,iPart(U)))=2:Then
+											[[|LX(1)][|LX(2)][|LX(3)]]
+											prgmthetaNORM
+											{Ans(1,1),Ans(2,1),Ans(3,1)}->|LX
+										If |LX(3)=0:Then:0->|LX(1):1->|LX(3):End
+											{tan^-1(|LX(1)/|LX(3))/(2pi),cos^-1(|LX(2))/pi}
+											DelVar |LX
+											{.5-Ans(1),1-Ans(2)}
+											{Ans(1)*[C](41,iPart(U)),Ans(2)*[C](42,iPart(U))}
+											sum(Ans)
+											If fPart(int(Ans)/2)=0:Then
+												[C](18,iPart(U))->W
+											Else
+												[C](19,iPart(U))->W
+											End
+										Else
+											If fPart((int(|LX(1))+int(|LX(2))+int(|LX(3)))/2)=0:Then
+												[C](18,iPart(U))->W
+											Else
+												[C](19,iPart(U))->W
+											End
+										End:"If iPart([C](17,iPart(U)))=2
+									End:"If iPart([C](17,iPart(U)))=1
+									DelVar |LX
+									DelVar |LT
+									3->dim(|LT
+								Else
+									[C](18,iPart(U))->W
+								End
+								DelVar |LX
+								DelVar |LT
+								3->dim(|LT
+							Else
+								
+								"N[|e]x[t] [s]h[|a][p][|e] [t]y[p][|e]
+								"Mo[r][|e] [s]h[|a][p][|e][s] [|c]omi[n]g [s]oo[n]????
+								
+							End:"If fPart(U)=.3
+						End:"If fPart(U)=.2
+					End:"If fPart(U)=.1
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					"M|ul[t]i[p]l[|e] Ligh[t][s] Loo[p]
+					
+					DelVar J:DelVar |LT
+					3->dim(|LT)
+					For(J,1,O)
+						9->dim(|LL)
+						[[[H](1,J)][[H](2,J)][[H](3,J)]]-[[|LL(1)][|LL(2)][|LL(3)]]
+						prgmthetaNORM
+						augment(|LL,{Ans(1,1),Ans(2,1),Ans(3,1)})->|LL
+						[[|LL(10),|LL(4)][|LL(11),|LL(5)][|LL(12),|LL(6)]]
+						prgmthetaDOT
+						~1*([[|LL(10)][|LL(11)][|LL(12)]]-(2*Ans)*[[|LL(4)][|LL(5)][|LL(6)]])
+						prgmthetaNORM
+						augment(|LL,{Ans(1,1),Ans(2,1),Ans(3,1)})->|LL
+						[[[H](1,J)][[H](2,J)][[H](3,J)]]-[[|LL(1)][|LL(2)][|LL(3)]]
+						sqrt((Ans(1,1)^2)+(Ans(2,1)^2)+(Ans(3,1)^2))
+						augment(|LL,{Ans})->|LL
+						
+						
+						
+						
+						
+						"Am[|b]i[|e][n][|c][|e]
+						|LB(1)*[H](4,J)+|LT(1)->|LT(1)
+						
+						DelVar N
+						
+						
+						"Sh[|a][|d]o|w [|c][|a]l[|c] h[|e][r][|e] 
+						
+						
+						For(Q,1,A+B+C+D+E)
+							
+							
+							If Q<=A:Then
+								"S[p]h[|e][r][|e]
+								Q->M
+								4->dim(|LM
+								M+.1
+								prgmthetaREGTRAN
+								(Ans)^^-1*[[|LL(10),|LL(1)][|LL(11),|LL(2)][|LL(12),|LL(3)][0,1]]
+								augment(|LL,{Ans(1,1),Ans(2,1),Ans(3,1),Ans(1,2),Ans(2,2),Ans(3,2)})->|LL
+								[[|LL(17),|LL(17)][|LL(18),|LL(18)][|LL(19),|LL(19)]]
+								prgmthetaDOT:Ans->|LM(1)
+								[[|LL(17),|LL(20)][|LL(18),|LL(21)][|LL(19),|LL(22)]]
+								prgmthetaDOT:2*Ans->|LM(2)
+								[[|LL(20),|LL(20)][|LL(21),|LL(21)][|LL(22),|LL(22)]]
+								prgmthetaDOT:Ans-1->|LM(3)
+								(|LM(2)^2)-(4*(|LM(1))*(|LM(3)))->|LM(4)
+								16->dim(|LL
+								If |LM(4)>0:Then
+									[[(~|LM(2)+sqrt(|LM(4)))/(2*|LM(1))][(~|LM(2)-sqrt(|LM(4)))/(2*|LM(1))]]
+									If (Ans(1,1)>0 and Ans(1,1)<|LL(16)) or (Ans(2,1)>0 and Ans(2,1)<|LL(16))
+									Then
+										1->N
+										A+B+C+D+E+1->Q
+									End:"If (Ans(1,1)>0
+								End:"If |LM(4)>0
+								DelVar M:DelVar |LM
+							Else:
+								"N[|e]x[t] O[|b]j
+								If Q-A<=B:Then
+									
+									"Pl[|a][n][|e]
+									Q-A->M
+									M+.2
+									prgmthetaREGTRAN
+									(Ans)^^-1*[[|LL(10),|LL(1)][|LL(11),|LL(2)][|LL(12),|LL(3)][0,1]]
+									augment(|LL,{Ans(1,1),Ans(2,1),Ans(3,1),Ans(1,2),Ans(2,2),Ans(3,2)})->|LL
+									"Ligh[t] |v[|e][|c][t]o[r] and [t]h[|e][n] i[t][s] o[r]igi[n]
+									If abs(|LL(18))>.00000001:Then
+										~|LL(21)/|LL(18)
+										If Ans>0 and Ans<|LL(16):Then
+											1->N
+											A+B+C+D+E+1->Q
+										End:"If Ans>0 and Ans<|LL(16)
+									End:"If abs(|LL(18))>.00000001
+								Else:
+									
+									If Q-(A+B)<=C:Then
+										
+										Q-(A+B)->M
+										1->dim(|LM
+										M+.3
+										prgmthetaREGTRAN
+										(Ans)^(~1)*[[|LL(10),|LL(1)][|LL(11),|LL(2)][|LL(12),|LL(3)][0,1]]
+										augment(|LL,{Ans(1,1),Ans(2,1),Ans(3,1),Ans(1,2),Ans(2,2),Ans(3,2)})->|LL
+										
+										DelVar H
+										For(H,1,3)
+											3->dim(|LC)
+											If abs(|LL(16+H))>.00000001:Then
+												(1-|LL(19+H))/|LL(16+H)->|LC(1)
+												(~1-|LL(19+H))/|LL(16+H)->|LC(2)
+												1->|LC(3)
+											Else
+												69->|LC(1)
+												69->|LC(2)
+												0->|LC(3)
+											End:"If abs(|LL(16+H))>.00000001
+											If |LC(3)=1:Then
+												If |LC(1)>|LC(2):{|LC(2),|LC(1),1}->|LC
+												augment({|LC(1),|LC(2)},|LM)->|LM
+											End:"If |LC(3)=1
+											DelVar |LC
+										End:"For(H,1,3)
+										DelVar H
+										If dim(|LM)>1:Then
+											(dim(|LM)-1)->dim(|LM)
+											
+											If int(dim(|LM)/2)=1:Then
+												|LM(1)->|LC(1)
+												|LM(2)->|LC(2)
+											Else
+												
+												If int(dim(|LM)/2)=2:Then
+													max(|LM(1),|LM(3))->|LC(1)
+													min(|LM(2),|LM(4))->|LC(2)
+												Else
+													
+													If int(dim(|LM)/2)=3:Then
+														max({|LM(1),|LM(3),|LM(5)})->|LC(1)
+														min({|LM(2),|LM(4),|LM(6)})->|LC(2)
+													End:"If int(dim(|LM)/2)=3
+													
+												End:"If int(dim(|LM)/2)=2
+											End:"If int(dim(|LM)/2)=1
+											
+											
+											DelVar |LM
+											If |LC(1)<=|LC(2) and ((|LC(1)>0 and |LC(1)<|LL(16)) or (|LC(2)>0 and |LC(2)<|LL(16)):Then
+												1->N
+												A+B+C+D+E+1->Q
+											End
+										End:"If dim(|LM)>1
+										DelVar |LC
+										
+									Else:
+										"N[|e]x[t] O[|b]j
+										If Q-(A+B+C)<=D:Then
+											Q-(A+B+C)->M
+											
+											
+										Else:
+											"N[|e]x[t] O[|b]j
+											Q-(A+B+C+D)->M
+											
+											
+										End:"If Q-(A+B+C)<=D
+									End:"If Q-(A+B)<=C
+								End:"If Q-A<=B
+							End:"If Q<=A
+							DelVar M:DelVar |LM
+						End:"For(Q,1,A+B+C+D+E)
+						DelVar M:DelVar |LM
+						
+						
+						
+						
+						
+						
+						[[|LL(10),|LL(4)][|LL(11),|LL(5)][|LL(12),|LL(6)]]
+						prgmthetaDOT
+						
+						If Ans<0 or N=1:Then
+							0+|LT(2)->|LT(2)
+							0+|LT(3)->|LT(3)
+						Else
+							
+							
+							Ans*|LB(2)*[H](5,J)+|LT(2)->|LT(2)
+							"Diff|u[s]io[n]
+							
+							
+							[[|LL(13),|LL(7)][|LL(14),|LL(8)][|LL(15),|LL(9)]]
+							prgmthetaDOT
+							
+							If Ans<=0:Then
+								0+|LT(3)->|LT(3)
+							Else
+								
+								
+								Ans^|LB(4)
+								
+								((Ans*|LB(3)*[H](6,J))*((|LB(5)/5))+|LT(3)->|LT(3)
+								"S[p][|e][|c]|ul[|a][r]/Shi[n][n]y
+								"i[|d]k if 5/|LB(5) or l[|b](5)/5 [|c]h[|e][|c]k l[|a][t][r]
+								
+								
+							End:"If Ans<=0
+						End:"Ans<0 or N>1
+						DelVar N
+					End:"For(J,1,O)
+					
+					
+					((|LB(5)/5)(sum(|LT))->L
+					
+					
+					
+					
+					
+					"Sho|ul[|d] H[|a]|v[|e] Ligh[t] V[|a]l|u[|e] Af[t][|e][r] [t]hi[s],S[t]o[r][|e] i[n] L
+					DelVar |LT
+					If L>1:1->L
+					If L<0:0->L
+					
+					
+					iPart(W)->W
+					If W=25:1+R->R
+					
+					
+					
+					
+					iPart(W)->W
+					"O[r]igi[n] [p]oi[n][t] fo[r] |v[|e][|c][t]o[r][s] 1,2,3
+					"Normal V[|e][|c][t]o[r] [t]o [s][p]h[|e][r][|e] [s]|u[r]f[|a][|c][|e] 4,5,6
+					"Ey[|e] |v[|e][|c][t]o[r] 7,8,9
+					"Fi[n][|d]i[n]g [t]h[|e] [r][|e]fl[|e][|c][t][|e][|d] Ey[|e] [r][|a]y
+					If R and fPart(R)*100<1 and W=25:Then
+						R+(L/100)->R
+						[[|LL(7),|LL(4)][|LL(8),|LL(5)][|LL(9),|LL(6)]]
+						prgmthetaDOT
+						~1*([[|LL(7)][|LL(8)][|LL(9)]]-(2*Ans)*[[|LL(4)][|LL(5)][|LL(6)]])
+						prgmthetaNORM
+						[[Ans(1,1),|LL(1)][Ans(2,1),|LL(2)][Ans(3,1),|LL(3)][0,1]]->[F]
+						
+						
+						
+						DelVar T:DelVar S:DelVar N:DelVar |LT
+						DelVar L:DelVar |LL:DelVar |LM:DelVar J
+					Else
+						(fPart(R)*100)+L->L
+						0->R
+					End
+					
+					
+			Else:0->L:End:"If U!=0
+		Else:0->L:End:"If dim(|LT)>1
+			
+			If R>500 and fPart(R)=0:Then
+				0->L:0->Z
+			End
+			If R and U!=0:Goto 10
+			If R and U=0:fPart(R)*100->L
+			
+	Else:0->L:End:"If A+B+C+D+E>0
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		DelVar |LB
+		iPart(W)->W
+		"Colo[r] D[|e][t][|e][r]mi[n][|a][t]io[n]
+		
+		If W=25:Then
+			
+		If L<=3/24:Then:1->Z:End
+		If L<=5/24:Then:2->Z:24->W:End
+		If L<=7/24:Then:3->Z:24->W:End
+		If L<=9/24:Then:3->Z:23->W:End
+		If L<=11/24:Then:4->Z:23->W:End
+		If L<=13/24:Then:4->Z:22->W:End
+		If L<=15/24:Then:5->Z:22->W:End
+		If L<=17/24:Then:6->Z:22->W:End
+		If L<=19/24:Then:6->Z:21->W:End
+		If L<=21/24:Then:7->Z:21->W:End
+		If L>21/24:Then:7->Z:End
+			
+		Else
+			
+			If L>.975:9->Z
+			If L>.975:Goto 55
+			If L>(7/8):8->Z
+			If L>(7/8):Goto 55
+			If L>(6/8):7->Z
+			If L>(6/8):Goto 55
+			If L>(5/8):6->Z
+			If L>(5/8):Goto 55
+			If L>(4/8):5->Z
+			If L>(4/8):Goto 55
+			If L>(3/8):4->Z
+			If L>(3/8):Goto 55
+			If L>(2/8):3->Z
+			If L>(2/8):Goto 55
+			If L>(1/8):2->Z
+			If L>(1/8):Goto 55
+			If L>0.025:1->Z
+			If L>0.025:Goto 55
+			If L<=0.025:0->Z
+			If L<=0.025:Goto 55
+			If Z=12:0->Z
+			Lbl 55
+			
+		End
+		
+		
+		
+		
+		
+		
+		
+		
+		"P[r]i[n][t]i[n]g
+		DelVar T:DelVar U:DelVar R:DelVar S:DelVar N:DelVar |LT:DelVar |LL:DelVar |LM
+		
+		
+		:
+		If Z=0:Then
+			12->Z
+			Pxl-On(Y*2,X*2,Z)
+			Pxl-On(Y*2,X*2+1,Z)
+			Pxl-On(Y*2+1,X*2,Z)
+			Pxl-On(Y*2+1,X*2+1,Z)
+		Else
+			
+			
+			If Z=1:Then
+				12->Z
+				If W=25 and L<1/24:Z->W
+				If W=25 and L>=1/24:24->W
+				Pxl-On(Y*2,X*2,W)
+				Pxl-On(Y*2,X*2+1,Z)
+				Pxl-On(Y*2+1,X*2,Z)
+				Pxl-On(Y*2+1,X*2+1,Z)
+			Else
+				
+				
+				If Z=8:Then
+					20->Z
+					If W=25 and L<=23/24:21->W
+					If W=25 and L>23/24:Z->W
+					Pxl-On(Y*2,X*2,W)
+					Pxl-On(Y*2,X*2+1,Z)
+					Pxl-On(Y*2+1,X*2,Z)
+					Pxl-On(Y*2+1,X*2+1,Z)
+				Else
+					
+					
+					If Z=9:Then
+						20->Z
+						Pxl-On(Y*2,X*2,Z)
+						Pxl-On(Y*2,X*2+1,Z)
+						Pxl-On(Y*2+1,X*2,Z)
+						Pxl-On(Y*2+1,X*2+1,Z)
+						
+					Else
+						
+						
+						
+						If Z=2:12->Z
+						If Z=3:24->Z
+						If Z=4:23->Z
+						If Z=5:22->Z
+						If Z=6:21->Z
+						If Z=7:20->Z
+						
+						
+						
+						
+						Pxl-On(Y*2,X*2,W)
+						Pxl-On(Y*2,X*2+1,Z)
+						Pxl-On(Y*2+1,X*2,Z)
+						Pxl-On(Y*2+1,X*2+1,W)
+						
+					End:"If Z=9
+				End:"If Z=8
+			End:"If Z=1
+		End:"If Z=0
+		
+		
+		DelVar L:DelVar K:DelVar W
+[G](1,1)+(1/66)->[G](1,1):End:[G](2,1)-(1/66)->[G](2,1):~1+(1/132)->[G](1,1):0->X:End:"End of Big Loo[p]
+Pause 
+
+
+
+prgmthetaDELVAR
+
+
+
+
+

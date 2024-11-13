@@ -1,0 +1,33 @@
+26.1->D:1->M:1->C
+{4.02,1.01,1.01,1.01}->L1
+10.05->A
+ClrHome
+Output(100*fPart(A),int(A),"delta"
+For(L,4,260
+	Repeat A=L1(1)
+		L->dim(L1
+		getKey
+		If Ans=45:Goto 0
+		~1(Ans=24)-.01(Ans=25)+1(Ans=26)+.01(Ans=34)
+		If (M=1 or M=~1) and (Ans=.01 or Ans=~.01):Ans->M
+		If (M=.01 or M=~.01) and (Ans=1 or Ans=~1):Ans->M
+		L1(1)+M
+		If int(Ans)>26 or int(Ans)<1 or 100(fPart(Ans))<1 or 100(fPart(Ans))>10:Goto 0
+		For(N,1,L)
+			If L1(N)=Ans:Goto 0
+		End
+		Output(100*fPart(Ans),int(Ans),"0"
+		Output(100*fPart(L1(L)),int(L1(L))," "
+		augment({Ans},L1->L1
+	End
+	Lbl 1
+	randInt(1,26)+.01randInt(1,10->A
+	For(N,1,L)
+		If L1(N)=Ans:Goto 1
+	End
+	Output(100*fPart(A),int(A),"delta"
+End
+Lbl 0
+ClrHome
+Output(4,9,"S[|c]o[r][|e]: "
+Output(4,15,(L-4)*10)
