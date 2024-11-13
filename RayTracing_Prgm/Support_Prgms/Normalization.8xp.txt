@@ -1,0 +1,1 @@
+Matr>list(Ans,1,|LI):DelVar [I]:sqrt(sum((|LI)^^2)):|LI/Ans:List>matr(Ans,[I]:DelVar |LI:[I]:DelVar [I]

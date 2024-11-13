@@ -1,0 +1,1 @@
+Ans->[I]:{0}->|LI:dim([I]):For(I,1,Ans(1):[I](I,1)*[I](I,2)->|LI(I):End:sum(|LI):DelVar |LI:DelVar [I]:DelVar I

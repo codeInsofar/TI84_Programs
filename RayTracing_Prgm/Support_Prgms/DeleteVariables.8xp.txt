@@ -1,0 +1,16 @@
+DelVar A:DelVar B:DelVar C:DelVar D:DelVar E:DelVar F
+DelVar G:DelVar H:DelVar I:DelVar J:DelVar K:DelVar L
+DelVar M:DelVar N:DelVar O:DelVar P:DelVar Q:DelVar R
+DelVar S:DelVar T:DelVar U:DelVar V:DelVar W:DelVar X
+DelVar Y:DelVar Z
+DelVar [A]:DelVar [B]:DelVar [C]:DelVar [D]:DelVar [E]
+DelVar [F]:DelVar [G]:DelVar [H]:DelVar [I]:DelVar [J]
+DelVar |LA:DelVar |LB:DelVar |LC:DelVar |LD:DelVar |LE:DelVar |LF
+DelVar |LG:DelVar |LH:DelVar |LI:DelVar |LJ:DelVar |LK:DelVar |LL
+DelVar |LM:DelVar |LN:DelVar |LO:DelVar |LP:DelVar |LQ:DelVar |LR
+DelVar |LS:DelVar |LT:DelVar |LU:DelVar |LV:DelVar |LW:DelVar |LX
+DelVar |LY:DelVar |LZ
+ClrAllLists
+Clear Entries
+DelVar Str1:DelVar Str2:DelVar Str3:DelVar Str4:DelVar Str5
+DelVar Str6:DelVar Str7:DelVar Str8:DelVar Str9:DelVar Str0
